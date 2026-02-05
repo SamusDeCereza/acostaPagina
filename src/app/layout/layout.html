@@ -1,82 +1,23 @@
-<div class="drawer">
-    <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-    <div class="drawer-content flex flex-col">
-    <!-- Navbar -->
-        <div class="navbar bg-base-300 w-full">
-        <div class="flex-none lg:hidden">
-            <label for="my-drawer-2" aria-label="open sidebar" class="btn btn-square btn-ghost">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                class="inline-block h-6 w-6 stroke-current"
-            >
-                <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-            </svg>
-            </label>
-        </div>
-        <div class="mx-2 flex-1 px-2">Navbar Title</div>
-        <div class="hidden flex-none lg:block">
-            <ul class="menu menu-horizontal">
-            <!-- Navbar menu content here -->
-            <li><a>Navbar Item 1</a></li>
-            <li><a>Navbar Item 2</a></li>
-            </ul>
-        </div>
-        </div>
-    <!-- Page content here -->
-    Content
-    </div>
-
-    <div class="drawer-side">
-        <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
-        
-        <ul class="menu bg-base-200 min-h-full w-80 p-4">
-        <!-- Sidebar content here -->
-            <li>
-                <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                Inicio
-                </a>
-            </li>
-
-            <li *ngFor="let link of links; index as i">
-                <a [routerLink]=link.name routerLinkActive="active">{{link.name}}</a>
-            </li>
-        </ul>
-    </div>
-</div>
-
-
 
 <!-- Encabezado superior. Se mantendrá fijo en todas las páginas. -->
-<header class="topbar">
+<!-- <header class="topbar">
   <div class="brand">Sitio-Estructura</div>
 
-  <form class="d-flex ms-3" (submit)="$event.preventDefault(); goSearch()">
-    <input
-      class="form-control form-control-sm me-2"
-      placeholder="Buscar…"
-      [(ngModel)]="quickQuery"
-      name="quickQuery"
-    />
-    <button class="btn btn-sm btn-primary" type="submit">Ir</button>
-  </form>
-</header>
+  
+</header> -->
+<app-navbar></app-navbar>
 
 <!-- Contenido principal. -->
-<main class="content">
+<main class="content min-h-screen overflow-x-hidden">
+
+
+
   <!-- <router-outlet>: Aquí es donde Angular muestra la página actual.
        Analogía: Es el escenario del teatro. El marco (header/footer) es fijo, pero en este hueco cambia la obra (la página). -->
-  <app-breadcrumb></app-breadcrumb>
-  <router-outlet></router-outlet>
+    <app-breadcrumb></app-breadcrumb>
+
+    <router-outlet></router-outlet>
+
 </main>
 
-<!-- Pie de página. También fijo. -->
-<footer class="footer">
-  <small>Desarrollo Web Profesional</small>
-</footer>
+<app-footer></app-footer>

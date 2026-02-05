@@ -1,0 +1,9 @@
+<form class="flex gap-3 " (submit)="$event.preventDefault(); goSearch()">
+    <input
+    class="input-sm bg-white rounded-sm px-2"
+    placeholder="Buscar…"
+    [(ngModel)]="quickQuery"
+    name="quickQuery"
+    />
+    <button class="btn btn-sm btn-primary" type="submit">Ir</button>
+</form>

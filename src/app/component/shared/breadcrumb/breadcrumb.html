@@ -1,6 +1,6 @@
 <!-- Contenedor principal de navegación -->
 <!-- aria-label="breadcrumb" mejora la accesibilidad indicando qué es esta sección -->
-<nav class="breadcrumb" aria-label="breadcrumb">
+<nav class="text-md m-8" aria-label="breadcrumb">
 
   <!-- Itera sobre cada 'crumb' (miga) en la lista 'crumbs' de component.ts -->
   <!-- 'let last = last' es una variable local que es true si es el último elemento -->
@@ -8,18 +8,18 @@
 
     <!-- Si NO es el último elemento, mostramos un enlace cliqueable -->
     <!-- [routerLink] asigna la URL de destino -->
-    <a *ngIf="!last" [routerLink]="crumb.url">
+    <a *ngIf="!last" [routerLink]="crumb.url" class="opacity-70 hover:opacity-100 font-semibold">
       {{ crumb.label }}
     </a>
 
     <!-- Si ES el último elemento, mostramos solo texto (página actual) -->
     <!-- Usamos una clase diferente para estilarlo distinto -->
-    <span *ngIf="last" class="current">
+    <span *ngIf="last" class="current" class="font-semibold">
       {{ crumb.label }}
     </span>
 
     <!-- Separador visual entre elementos (/) -->
     <!-- Solo se muestra si NO es el último elemento -->
-    <span *ngIf="!last" class="separator">/</span>
+    <span *ngIf="!last" class="opacity-70">/</span>
   </ng-container>
 </nav>

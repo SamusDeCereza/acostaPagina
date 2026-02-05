@@ -1,1 +1,57 @@
-<p>menu works!</p>
+
+<app-container>
+
+    <div class="grid grid-cols-12 gap-3 lg:flex-row-reverse">
+        <div class="lg:col-span-8 col-span-12">
+            <h2 class="text-2xl font-bold">Menús</h2>
+
+            <hr class="text-base-300 my-5">
+
+            <p class="text-justify">En una página web existen distintos tipos de menús de navegación, cada uno pensado para organizar el contenido y facilitar la experiencia del usuario según el contexto del sitio. A continuación tienes una clasificación clara y adecuada para una página informativa.
+            </p>
+
+            <br>
+
+            <p class="text-justify">No existe un menú “mejor” de forma universal; la elección depende del tipo de sitio, la cantidad de contenido y el dispositivo del usuario.
+            Un buen diseño suele combinar varios tipos de menú para lograr una navegación clara y eficiente.</p>
+        </div>
+
+        <div class="lg:col-span-4 col-span-12">
+            <app-card class="">
+                <div class="size-full flex flex-wrap justify-center items-center my-6">
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <img class="w-6/8 " 
+                        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F007%2F645%2F150%2Foriginal%2Fweb-site-design-menu-navigation-elements-with-icons-set-navigation-menu-bar-design-element-eps10-illustration-vector.jpg&f=1&nofb=1&ipt=f1e028d257142e2859a1bb19b639afd6912a97ffe946bb815073f352056e31af" alt="">
+                        <small class="opacity-70">Tipos de menús</small>
+                    </div>
+                </div>
+            </app-card>
+        </div>
+    </div>
+
+</app-container>
+
+<app-container>
+
+    <h3 class="text-xl font-semibold">Tipos de menús</h3>
+
+    <div class="grid grid-cols-12 *:lg:col-span-4 *:col-span-12 gap-3">
+
+        <div *ngFor="let menu of menus; index as i" class="">
+            <app-card>
+                <div class="m-3 flex flex-wrap justify-center">
+
+                    <h4 class="font-semibold text-center lg:w-full">
+                        {{menu.titulo}}
+                    </h4>
+
+                    <p class="text-center">
+                        {{menu.texto}}
+                    </p>
+                </div>
+            </app-card>
+        </div>        
+
+    </div>
+
+</app-container>

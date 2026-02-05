@@ -1,1 +1,93 @@
-<p>breadcrumbs works!</p>
+
+<app-container>
+
+    <div class="grid grid-cols-12 gap-3">
+        <div class="lg:col-span-8 col-span-12">
+            <h2 class="text-2xl font-bold">Breadcrumbs</h2>
+
+            <hr class="text-base-300 my-5">
+
+            <p class="text-justify">
+                Los breadcrumbs (también llamados migas de pan o ruta de navegación) 
+                son un elemento de navegación web que muestra al usuario el camino 
+                jerárquico desde la página principal hasta la página actual.
+                Normalmente se presentan en forma de una lista horizontal de enlaces, 
+                separados por símbolos como > o /.
+            </p>
+
+            <br>
+            <h3 class="text-xl font-semibold">¿Para qué sirven los breadcrumbs?</h3>
+
+            <p>Los breadcrumbs ayudan a:</p>
+
+            <ul class="list-disc mx-8">
+                <li>Orientar al usuario dentro del sitio web</li>
+                <li>Mejorar la navegación, permitiendo volver fácilmente a secciones anteriores</li>
+                <li>Reducir la tasa de rebote, al facilitar la exploración del contenido</li>
+                <li>Mejorar la experiencia de usuario (UX), especialmente en sitios grandes</li>
+                <li>Apoyar el SEO, ya que los motores de búsqueda entienden mejor la estructura del sitio</li>
+            </ul>
+        </div>
+
+        <div class="lg:col-span-4 col-span-12">
+            <app-card class="">
+                <div class="size-full flex flex-wrap justify-center items-center my-3 lg:my-0">
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <img class="w-6/8 " 
+                        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.tildacdn.com%2Ftild6139-3435-4930-a366-363663643563%2Fbreadcrumbs-min.png&f=1&nofb=1&ipt=22b596b9c1984c38c487a38d9c24339b91f1ac4723806e7f2ad7d3efbcf3e495" alt="">
+                        <small class="opacity-70">Ejemplos de breadcrumbs</small>
+                    </div>
+                </div>
+            </app-card>
+        </div>
+    </div>
+
+</app-container>
+
+<app-container>
+
+    <h3 class="text-xl font-semibold">Tipos de breadcrumbs</h3>
+
+    <div class="grid grid-cols-12 *:lg:col-span-4 *:col-span-12 gap-3">
+
+        <div class="">
+            <app-card>
+                <div class="m-3 flex flex-wrap justify-center">
+                    <img src="schema.svg" alt="" class="lg:size-24">
+
+                    <h4 class="font-semibold text-center lg:w-full">Jerárquicos</h4>
+
+                    <p class="text-center">Muestran la estructura del sitio y la posición actual del usuario.
+                    Son los más comunes.</p>
+                </div>
+            </app-card>
+        </div>
+
+        <div class="">
+            <app-card>
+                <div class="m-3 flex flex-wrap justify-center">
+                    <img src="history.svg" alt="" class="lg:size-24">
+
+                    <h4 class="font-semibold text-center lg:w-full">Basados en historial</h4>
+
+                    <p class="text-center">Reflejan el recorrido real del usuario, similar al botón “Atrás” del navegador.
+                    Son menos recomendados por posibles confusiones.</p>
+                </div>
+            </app-card>
+        </div>
+        
+        <div class="">
+            <app-card>
+                <div class="m-3 flex flex-wrap justify-center">
+                    <img src="user_attributes.svg" alt="" class="lg:size-24">
+
+                    <h4 class="font-semibold text-center lg:w-full">Basados en atributos</h4>
+
+                    <p class="text-center">Usados en tiendas en línea, muestran filtros o características aplicadas.</p>
+                </div>
+            </app-card>
+        </div>        
+
+    </div>
+
+</app-container>

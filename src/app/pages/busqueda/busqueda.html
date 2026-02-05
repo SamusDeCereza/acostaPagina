@@ -1,12 +1,13 @@
-<div class="container mt-3">
+<app-container>
 
-  <h2 class="mb-3">Búsqueda en el sitio</h2>
+  <h2 class="card-title">Búsqueda en el sitio</h2>
 
   <!-- Búsqueda simple -->
-  <div class="card mb-3">
+
+  <app-card>
     <div class="card-body">
-      <label class="form-label">Búsqueda simple (palabras clave)</label>
-      <div class="input-group">
+      <label class="card-title">Búsqueda simple (palabras clave)</label>
+      <div class="flex gap-3">
         <!--
           [(ngModel)]="query"
           ANALOGÍA: Es como un espejo o un "walkie-talkie" de dos vías.
@@ -18,40 +19,40 @@
           ANALOGÍA: Es un "oído" atento. Escucha el evento de soltar la tecla (keyup),
           pero SOLO si esa tecla es ENTER. Si sucede, ejecuta la función doSearch().
         -->
-        <input class="form-control" placeholder="Ej: menú, breadcrumbs, mapa..." [(ngModel)]="query"
+        <input class="input-sm bg-white rounded-sm px-2 lg:w-sm" placeholder="Ej: menú, breadcrumbs, mapa..." [(ngModel)]="query"
           (keyup.enter)="doSearch()" />
         <!-- (click): Escucha cuando el usuario hace clic con el ratón. -->
         <button class="btn btn-primary" (click)="doSearch()">Buscar</button>
-        <button class="btn btn-outline-secondary" (click)="clear()">Limpiar</button>
+        <button class="btn btn-outline btn-secondary" (click)="clear()">Limpiar</button>
       </div>
       <small class="text-muted d-block mt-2">
         Tip: escribe una palabra y presiona Enter.
       </small>
     </div>
-  </div>
+  </app-card>
 
   <!-- Búsqueda avanzada -->
-  <div class="card mb-3">
+  <app-card>
     <div class="card-body">
       <h5 class="card-title">Búsqueda avanzada (filtros)</h5>
 
-      <div class="row g-3">
-        <div class="col-12 col-md-4">
+      <div class="flex flex-wrap gap-3 *:flex *:gap-3 *:items-center">
+        <div class="">
           <label class="form-label">Tipo</label>
           <!--
             (change)="doSearch()"
             Cada vez que el usuario cambia la opción del select, disparamos la búsqueda automáticamente.
           -->
-          <select class="form-select" [(ngModel)]="filters.type" (change)="doSearch()">
+          <select class="select lg:w-36" [(ngModel)]="filters.type" (change)="doSearch()">
             <option value="todos">Todos</option>
             <option value="pagina">Página</option>
             <option value="seccion">Sección</option>
           </select>
         </div>
 
-        <div class="col-12 col-md-8">
+        <div class="">
           <label class="form-label">Sección/tema</label>
-          <select class="form-select" [(ngModel)]="filters.section" (change)="doSearch()">
+          <select class="select lg:w-48" [(ngModel)]="filters.section" (change)="doSearch()">
             <option value="todas">Todas</option>
             <!--
               *ngFor="let s of sections"
@@ -68,10 +69,10 @@
         Los filtros acotan resultados sin necesidad de escribir más palabras.
       </small>
     </div>
-  </div>
+  </app-card>
 
   <!-- Resultados -->
-  <div class="card">
+  <app-card>
     <div class="card-body">
       <h5 class="card-title">Resultados</h5>
 
@@ -94,27 +95,29 @@
           No se encontraron resultados con los criterios actuales.
         </div>
 
-        <div *ngIf="results.length > 0" class="list-group">
+        <ul *ngIf="results.length > 0" class="list bg-base-100 rounded-box overflow-clip">
           <!--
             [routerLink]="item.path"
             Usamos corchetes [] porque "item.path" es una variable, no un texto fijo.
             Esto le dice a Angular: "Evalúa lo que hay adentro de las comillas".
           -->
-          <a *ngFor="let item of results" class="list-group-item list-group-item-action" [routerLink]="item.path">
-            <div class="d-flex justify-content-between align-items-center">
-              <div>
-                <div class="fw-semibold">{{ item.title }}</div>
-                <small class="text-muted">{{ item.description }}</small>
+          <li *ngFor="let item of results" class="list-row w-full flex rounded-none! hover:bg-base-300 ">
+            <a [routerLink]="item.path" class="w-full">
+              <div class="flex gap-3 justify-between align-items-center">
+                <div>
+                  <div class="font-semibold">{{ item.title }}</div>
+                  <small class="text-muted">{{ item.description }}</small>
+                </div>
+                <span class="badge bg-accent">
+                  {{ item.section }}
+                </span>
               </div>
-              <span class="badge text-bg-secondary">
-                {{ item.section }}
-              </span>
-            </div>
-          </a>
-        </div>
+            </a>
+          </li>
+        </ul>
       </ng-container>
 
     </div>
-  </div>
+  </app-card>
 
-</div>
+</app-container>

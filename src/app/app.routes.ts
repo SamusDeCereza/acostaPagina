@@ -5,6 +5,7 @@ import { Error404 } from './pages/error-404/error-404';
 import { Inicio } from './pages/inicio/inicio';
 import { MapaSitio } from './pages/mapa-sitio/mapa-sitio';
 import { Menu } from './pages/menu/menu';
+import { Busqueda } from './pages/busqueda/busqueda';
 
 export const routes: Routes = [
     {
@@ -27,6 +28,10 @@ export const routes: Routes = [
     {
         path: 'menu',
         component: Menu,
+    },
+    {
+        path: 'busqueda',
+        component: Busqueda,
     },    
     {
         path: '**',

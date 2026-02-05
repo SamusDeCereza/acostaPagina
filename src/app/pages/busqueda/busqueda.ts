@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
-import { NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 import { SearchApi, SearchFilters } from '../../services/search';
 import { SiteItem } from '../../data/site-index';
+import { Container } from "../../component/structure/container/container";
+import { Card } from "../../component/structure/card/card";
 
 /**
  * @Component
@@ -21,7 +24,7 @@ import { SiteItem } from '../../data/site-index';
   selector: 'app-busqueda',
   standalone: true,
   // Aquí importamos las "herramientas" que vamos a usar en el HTML (ngFor, ngIf, forms, links...)
-  imports: [RouterModule, FormsModule, NgFor, NgIf, AsyncPipe],
+  imports: [RouterModule, FormsModule, CommonModule, AsyncPipe, Container, Card],
   templateUrl: './busqueda.html',
   styleUrl: './busqueda.css',
 })

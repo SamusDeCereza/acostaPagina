@@ -14,7 +14,7 @@ import { filter, Subscription } from 'rxjs';
 // Importación de directivas comunes de Angular.
 // NgFor: Para iterar listas en el HTML.
 // NgIf: Para renderizado condicional.
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf, NgClass } from '@angular/common';
 
 // Definición de un tipo personalizado para las migas de pan (breadcrumbs).
 // Ayuda a mantener el tipado estricto y saber qué estructura tiene cada elemento.
@@ -27,7 +27,7 @@ type Crumb = {
 @Component({
   selector: 'app-breadcrumb', // Nombre de la etiqueta HTML para usar este componente: <app-breadcrumb></app-breadcrumb>
   standalone: true, // Indica que es un componente autónomo (no necesita NgModule).
-  imports: [RouterModule, NgFor, NgIf], // Importa las dependencias necesarias directamente aquí.
+  imports: [RouterModule, NgFor, NgIf, NgClass], // Importa las dependencias necesarias directamente aquí.
   templateUrl: './breadcrumb.html', // Archivo HTML asociado.
   styleUrls: ['./breadcrumb.css'], // Archivos de estilos asociados.
 })
